@@ -23,16 +23,22 @@ html { background: var(--bg); }
 [hidden] { display: none !important; }
 
 body {
-  width: 380px;
+  width: 392px;
   margin: 0;
   padding: 14px;
   background: var(--bg);
   color: var(--text);
   max-height: 580px;
   overflow: auto;
+  scrollbar-color: #343b4a transparent;
 }
 
 button, p, h1, h2 { margin: 0; }
+
+button {
+  appearance: none;
+  font-family: inherit;
+}
 
 .top {
   display: flex;
@@ -74,17 +80,24 @@ h1 {
   cursor: pointer;
 }
 
+#capture-btn:hover { filter: brightness(1.08); }
+
+#capture-btn:active { transform: translateY(1px); }
+
 #capture-btn:disabled {
   opacity: 0.55;
   cursor: progress;
+  filter: none;
+  transform: none;
 }
 
 .banner {
   border-radius: 10px;
   padding: 8px 10px;
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.45;
   margin-bottom: 12px;
+  overflow-wrap: anywhere;
 }
 
 .banner[hidden] { display: none; }
@@ -180,11 +193,16 @@ h2 {
   min-width: 0;
 }
 
+.thumb {
+  background: #050607;
+  aspect-ratio: 16 / 9;
+}
+
 .card img {
   display: block;
   width: 100%;
-  height: 78px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   background: #050607;
 }
 
@@ -209,14 +227,17 @@ h2 {
 
 .actions button {
   flex: 1;
+  min-width: 0;
   border: 1px solid var(--line);
   background: #1b202b;
   color: var(--text);
   border-radius: 7px;
-  font: 600 10px/1.2 inherit;
-  padding: 4px 0;
+  font: 600 11px/1.2 inherit;
+  padding: 5px 0;
   cursor: pointer;
 }
+
+.actions button:hover { background: #262c3a; }
 
 .actions button.danger { color: var(--danger); }
 

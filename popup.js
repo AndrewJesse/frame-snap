@@ -202,6 +202,7 @@ function render() {
   if (!latest) {
     workspace.hidden = true;
     historySection.hidden = true;
+    historyGrid.replaceChildren();
     emptyState.hidden = false;
     return;
   }
@@ -233,6 +234,10 @@ function buildCard(frame) {
   img.decoding = 'async';
   img.draggable = false;
 
+  var thumb = document.createElement('div');
+  thumb.className = 'thumb';
+  thumb.appendChild(img);
+
   var time = document.createElement('button');
   time.type = 'button';
   time.className = 'time';
@@ -252,7 +257,7 @@ function buildCard(frame) {
   var meta = document.createElement('div');
   meta.className = 'card-meta';
   meta.append(time, actions);
-  card.append(img, meta);
+  card.append(thumb, meta);
   return card;
 }
 

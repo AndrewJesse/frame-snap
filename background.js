@@ -61,13 +61,26 @@ function queryTabs(filter) {
   });
 }
 
+function activeTabIn(win) {
+  var tabs = win && win.tabs ? win.tabs : [];
+  for (var i = 0; i < tabs.length; i += 1) {
+    if (tabs[i].active) return tabs[i];
+  }
+  return null;
+}
+
 function queryActiveTab() {
-  // Service workers have no window, so lastFocusedWindow is the reliable
-  // way to reach the tab the user is looking at. Fall back if a browser
-  // returns nothing for that filter.
-  return queryTabs({ active: true, lastFocusedWindow: true }).then(function (tab) {
+  // The action popup is its own window. Ask for the last focused normal
+  // browser window so capture and seek hit the page the user is watching.
+  return callChrome(function (done) {
+    chrome.windows.getLastFocused({ populate: true, windowTypes: ['normal'] }, done);
+  }).then(function (win) {
+    return activeTabIn(win);
+  }).catch(function () {
+    return null;
+  }).then(function (tab) {
     if (tab) return tab;
-    return queryTabs({ active: true, currentWindow: true });
+    return queryTabs({ active: true, lastFocusedWindow: true });
   }).then(function (tab) {
     if (tab) return tab;
     return queryTabs({ active: true });
