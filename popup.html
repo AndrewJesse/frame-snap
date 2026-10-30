@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FrameSnap</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img class="logo" src="icons/icon48.png" width="28" height="28" alt="">
+      <h1>FrameSnap</h1>
+    </div>
+    <button id="capture-btn" type="button">Capture Current Frame</button>
+  </header>
+
+  <p id="banner" class="banner" hidden></p>
+
+  <section id="workspace" class="workspace" hidden>
+    <div class="shot-frame">
+      <img id="workspace-shot" alt="" draggable="false">
+    </div>
+    <div class="workspace-meta">
+      <button id="workspace-time" class="time" type="button"></button>
+      <p id="workspace-detail"></p>
+    </div>
+  </section>
+
+  <section id="history" class="history" hidden>
+    <div class="history-head">
+      <h2>On this device</h2>
+      <span id="history-count"></span>
+    </div>
+    <div id="history-grid" class="grid"></div>
+  </section>
+
+  <section id="empty-state" class="empty">
+    <p class="empty-title">No frames yet</p>
+    <p>Play a video, then capture the current frame. Snapshots stay in local storage on this device.</p>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
