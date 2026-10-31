@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="extension-popup">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FrameSnap</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
   <header class="top">
-    <div class="brand">
-      <img class="logo" src="icons/icon48.png" width="28" height="28" alt="Free-Utils capybara">
-      <h1>FrameSnap</h1>
-    </div>
-    <button id="capture-btn" type="button">Capture Current Frame</button>
+    <h1>
+      <img class="logo" src="icons/brand-logo.webp" width="22" height="22" alt="">
+      FrameSnap
+    </h1>
+    <p class="eyebrow">On this device</p>
   </header>
+
+  <button id="capture-btn" class="action-button" type="button">Capture Current Frame</button>
 
   <p id="banner" class="banner" hidden></p>
 
@@ -26,6 +29,11 @@
     </div>
   </section>
 
+  <section id="empty-state" class="empty">
+    <p class="empty-title">No frames yet</p>
+    <p>Play a video, then capture the current frame. Snapshots stay in local storage on this device.</p>
+  </section>
+
   <section id="history" class="history" hidden>
     <div class="history-head">
       <h2>On this device</h2>
@@ -34,12 +42,10 @@
     <div id="history-grid" class="grid"></div>
   </section>
 
-  <section id="empty-state" class="empty">
-    <p class="empty-title">No frames yet</p>
-    <p>Play a video, then capture the current frame. Snapshots stay in local storage on this device.</p>
-  </section>
-
-  <footer class="foot"><a href="https://free-utils.com">free-utils.com</a></footer>
+  <footer class="foot">
+    <p>Snapshots stay on this device.</p>
+    <p><a href="https://free-utils.com">https://free-utils.com</a></p>
+  </footer>
 
   <script src="popup.js"></script>
 </body>
