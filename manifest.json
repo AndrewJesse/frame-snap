@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "FrameSnap",
   "version": "1.0.0",
-  "description": "Capture pristine video frames, extract timestamps, and manage local snapshots entirely offline.",
+  "description": "Capture pristine video frames and keep snapshots on this device. A Free-Utils tool: https://free-utils.com",
   "permissions": ["activeTab", "storage", "scripting"],
   "background": { "service_worker": "background.js" },
   "action": {

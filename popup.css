@@ -58,7 +58,6 @@ button {
 .logo {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
   display: block;
 }
 
@@ -269,3 +268,16 @@ button:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
+
+.foot {
+  margin: 10px 2px 0;
+  text-align: right;
+}
+
+.foot a {
+  color: var(--muted);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.foot a:hover { color: var(--accent); }

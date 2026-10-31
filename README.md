@@ -1,6 +1,8 @@
 # FrameSnap
 
-FrameSnap is a local-first Chrome extension (Manifest V3) that captures the current video frame at native resolution, records its timestamp, and keeps a small gallery of snapshots on this device. It does not call external APIs, load remote scripts, or upload images.
+FrameSnap is a local-first Chrome extension (Manifest V3) from [Free-Utils](https://free-utils.com). It captures the current video frame at native resolution, records its timestamp, and keeps a small gallery of snapshots on this device. It does not call external APIs, load remote scripts, or upload images.
+
+The toolbar and popup use the Free-Utils capybara, the same mark as on [https://free-utils.com](https://free-utils.com).
 
 The capture picks the video that is playing, or the largest visible `<video>` if none is playing. The frame is encoded as JPEG (quality 0.92) so history can fit in `chrome.storage.local`. From the popup you can seek that timestamp, download the image, copy it, or delete it.
 
