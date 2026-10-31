@@ -17,7 +17,7 @@ The zip root is the unpacked extension. It contains only:
 - `popup.html`
 - `popup.js`
 - `popup.css`
-- `icons/icon16.png`, `icons/icon48.png`, `icons/icon128.png`
+- `icons/icon16.png`, `icons/icon48.png`, `icons/icon128.png`, `icons/brand-logo.webp`
 
 It does not contain this folder, the README, or any build tooling. Unzip it and the manifest is at the top level, so Chrome can load that folder unpacked as a check before you upload.
 
@@ -25,15 +25,7 @@ It does not contain this folder, the README, or any build tooling. Unzip it and 
 
 | Field | Value |
 | --- | --- |
-| Name | FrameSnap |
-| Summary | Capture pristine video frames and keep snapshots on this device. A Free-Utils tool: https://free-utils.com |
-| Category | Productivity |
-| Language | English |
-| Homepage | https://free-utils.com |
-
-Description you can paste:
-
-> FrameSnap captures the current frame of an HTML5 video at its native resolution and stores the JPEG on this device. Open the popup, choose Capture Current Frame, then seek back to that timestamp, download the image, copy it, or delete it. Nothing is uploaded. FrameSnap is a Free-Utils tool: https://free-utils.com
+Paste the title, summary, description, category, language, and URLs from `chrome-web-store/LISTING.md`. The summary is the manifest description, so “Summary from package” matches the zip.
 
 ## Icons
 
@@ -54,11 +46,12 @@ These are screenshots of the real extension popup (empty state, and a capture fr
 
 | File | Size | Use |
 | --- | --- | --- |
-| `chrome-web-store/screenshots/screenshot-1280x800.png` | 1280×800 | Primary screenshot. Shows a captured frame, timestamp, and history. |
-| `chrome-web-store/screenshots/screenshot-empty-1280x800.png` | 1280×800 | Optional second screenshot. Empty state before the first capture. |
-| `chrome-web-store/screenshots/small-promo-440x280.png` | 440×280 | Small promo tile. Same captured popup, scaled to the tile. |
+| `chrome-web-store/screenshots/screenshot-1280x800.jpg` | 1280×800 | Primary screenshot. Real popup after a capture. |
+| `chrome-web-store/screenshots/screenshot-empty-1280x800.jpg` | 1280×800 | Second screenshot. Real popup before the first capture. |
+| `chrome-web-store/screenshots/small-promo-440x280.jpg` | 440×280 | Small promo tile. |
+| `chrome-web-store/screenshots/marquee-1400x560.jpg` | 1400×560 | Marquee promo tile. |
 
-Screenshots are 24-bit PNG without an alpha channel.
+These are JPEG files, so they have no alpha channel. The store icon is a 128×128 PNG with no alpha channel.
 
 ## Single purpose
 
