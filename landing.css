@@ -1,0 +1,89 @@
+:root {
+  color-scheme: dark;
+  --bg: #101114;
+  --card: #181b22;
+  --line: rgba(244, 247, 255, 0.08);
+  --text: #f4f6fb;
+  --muted: #aeb6c8;
+  --accent: #2fdbc4;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.card {
+  width: min(100%, 420px);
+  margin: 0;
+  padding: 36px 28px 28px;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+
+.mark {
+  width: 128px;
+  height: 128px;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.lead {
+  margin: 12px 0 0;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.note {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.path {
+  font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", Menlo, Consolas, monospace;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.home {
+  margin: 22px 0 0;
+}
+
+.home a {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home a:hover { text-decoration: underline; }
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
